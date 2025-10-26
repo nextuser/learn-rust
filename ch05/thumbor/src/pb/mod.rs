@@ -100,8 +100,13 @@ mod tests {
         let spec1 = Spec::new_resize(100, 100, resize::SampleFilter::CatmullRom);
         let spec2 = Spec::new_filter(filter::FilterType::Marine);
         let image_spec = ImageSpec::new(vec![spec1, spec2]);
+        // ImageSpec -> String
         let s: String = image_spec.borrow().into();
         println!("spec s: {}", &s);
-        assert_eq!(image_spec, s.as_str().try_into().unwrap());
+        // String -> ImageSpec
+        //let outSpec = ImageSpec::try_from(s.as_str()).unwrap();
+        // try_info 会调用到TryFrom::try_from
+        let outSpec: ImageSpec = s.as_str().try_into().unwrap();
+        assert_eq!(image_spec, outSpec);
     }
 }
