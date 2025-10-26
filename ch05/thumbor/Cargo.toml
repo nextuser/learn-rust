@@ -1,0 +1,35 @@
+[package]
+name = "thumbor"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tokio = { version = "1.0", features = ["full"] } #异步处理
+tower = { version = "0.4", features = [
+    "util",
+    "timeout",
+    "load-shed",
+    "limit",
+] } #服务器处理中间件
+tower-http = { version = "0.1", features = [
+    "add-extension",
+    "compression-full",
+    "trace",
+] }
+axum = "0.2" #web server
+anyhow = "1.0" #error handling
+base64 = "0.13" #encoding decoding
+bytes = "1.0" # byte stream proces
+image = "0.23"
+lazy_static = "1.4" # use macro to initialize static variable
+lru = "0.7" # LRU cache least recently used
+percent-encoding = "2.1" # url encoding
+photon-rs = "0.3" # image processing
+prost = "0.8" # protobuf
+reqwest = "0.11" # http client
+serde = { version = "1", features = ["derive"] } # serialize deserialize
+tracing = "0.1"
+tracing-subscriber = "0.2"
+
+[build-dependencies]
+prost-build = "0.8"
