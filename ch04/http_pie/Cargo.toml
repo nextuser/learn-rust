@@ -5,7 +5,7 @@ edition = "2024"
 
 [dependencies]
 anyhow = "1.0.0"
-clap = { version = "4.5.50", features = ["derive"] }
+clap = { version = "3", features = ["derive"] }     # 命令行解析
 colored = "3.0.0"
 jsonxf = "1.1"
 mime = "0.3"
