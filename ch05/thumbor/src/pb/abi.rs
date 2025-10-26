@@ -11,7 +11,7 @@ pub struct Resize {
     pub height: u32,
     #[prost(enumeration="resize::ResizeType", tag="3")]
     pub rtype: i32,
-    #[prost(enumeration="resize::SameFilter", tag="4")]
+    #[prost(enumeration="resize::SampleFilter", tag="4")]
     pub filter: i32,
 }
 /// Nested message and enum types in `Resize`.
@@ -24,7 +24,7 @@ pub mod resize {
     }
     #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
     #[repr(i32)]
-    pub enum SameFilter {
+    pub enum SampleFilter {
         Undefined = 0,
         Nearest = 1,
         Triangle = 2,
@@ -58,7 +58,7 @@ pub struct Contrast {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Filter {
     #[prost(enumeration="filter::FilterType", tag="1")]
-    pub r#type: i32,
+    pub filter: i32,
 }
 /// Nested message and enum types in `Filter`.
 pub mod filter {

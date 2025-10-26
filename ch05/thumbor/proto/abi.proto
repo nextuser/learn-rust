@@ -13,7 +13,7 @@ message Resize{
     }
 
     ResizeType rtype = 3;
-    enum SameFilter{
+    enum SampleFilter{
         UNDEFINED = 0;
         NEAREST = 1;
         TRIANGLE = 2;
@@ -21,7 +21,7 @@ message Resize{
         GAUSSIAN = 4;
         LANCZOS3 = 5;
     }
-    SameFilter filter = 4;
+    SampleFilter filter = 4;
 }
 
 message Crop{
@@ -46,7 +46,7 @@ message Filter{
         ISLANDS = 2;
         MARINE = 3;
     }
-    FilterType type = 1;
+    FilterType filter = 1;
 }
 
 message Watermark{ 
