@@ -33,7 +33,7 @@ http_pie$ cargo run -- post http://www.abc.com c=dd  d=33
 - clap version 3.0 才能编译通过
 - clap verison 4.5 版本修改比较大，原来代码会编译不过
 
-# tokei 统计代码行数
+# tokei 统计代码行数 [tokei](https://github.com/XAMPPRocky/tokei)
 - install tokei
 ```bash
 cargo install --git https://github.com/XAMPPRocky/tokei.git tokei
@@ -59,4 +59,19 @@ tokei ./
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  Total                     4          257          193           28           36
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ```
+
+  
+
+  ```bash
+  tokei ./ --sort code
+tokei ./ --files
+  ```
+
+
+  ```bash
+  http_pie get https://www.sina.com.cn
+
+
+  
   ```
