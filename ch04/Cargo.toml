@@ -1,0 +1,2 @@
+[workspace]
+members = ["clap_demo", "http_pie"]
