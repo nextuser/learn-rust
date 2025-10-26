@@ -1,6 +1,7 @@
 use clap::Parser;
 #[derive(Parser, Debug)]
 struct Get {
+    #[arg(value_parser = parse_url)]
     url: String,
 }
 
