@@ -3,6 +3,13 @@ use polars::prelude::*;
 use sqlparser::parser::Parser;
 use std::ops::{Deref, DerefMut};
 
+mod loader;
+use tracing::info;
+mod convert;
+mod dialect;
+use dialect::MyDialect;
+pub use dialect::example_sql;
+
 use crate::fetcher::retrieve_data;
 //mod dialect;
 mod fetcher;
@@ -32,11 +39,6 @@ impl DataSet {
     }
 }
 
-mod loader;
-use tracing::info;
-mod convert;
-mod dialect;
-use dialect::MyDialect;
 pub async fn query<T: AsRef<str>>(sql: T) -> anyhow::Result<DataSet> {
     let sql = sql.as_ref();
     let ast = Parser::parse_sql(&MyDialect::default(), sql)?;
