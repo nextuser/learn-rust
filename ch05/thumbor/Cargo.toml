@@ -11,6 +11,10 @@ path = "src/server1.rs"
 name = "server2"
 path = "src/server2.rs"
 
+[[bin]]
+name="lazy"
+path="src/lazy.rs"
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
